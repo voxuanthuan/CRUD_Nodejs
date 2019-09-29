@@ -1,0 +1,28 @@
+extends ../layouts/common
+block content
+  .d-flex.align-items-center
+    h1.flex-grow-1 User
+    a.mr-4.btn.btn-primary(href="http://localhost:3000/users/create", role="button") New User
+  table.table.table-borderless
+    thead
+      tr
+        th(scope='col') #
+        th(scope='col') Name
+        th(scope='col') Phone
+        th(scope='col') Action
+    tbody
+      -var count = 1;
+      each user in users
+        
+        tr
+          th(scope='row')= count
+          td= user.name
+          td= user.phone
+          td
+            a(href="http://localhost:3000/users/update/" + user._id, role="button").mr-2.btn.btn-info.btn-sm Update
+            a(href="http://localhost:3000/users/delete/" + user._id, role="button").mr-2.btn.btn-danger.btn-sm Delete
+            a(href="http://localhost:3000/users/detail/" + user._id, role="button").btn.btn-success.btn-sm View
+          =count++
+          
+      
+

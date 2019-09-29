@@ -1,0 +1,15 @@
+extends ../layouts/common
+block content
+  h1 Update User
+  form(action="/users/update", method="POST")
+    .group-form
+      label(for="name") Name
+      input.form-control#name(type="text", aria-describedy="namehelp", name="name", value=user.name)
+    .group-form
+      label(for="phone") Phone
+      input.form-control#phone(type="number", name="phone", value=user.phone)
+    .group-form
+      label(for="email") Email
+      input.form-control#email(type="email", name="email", value=user.email)
+      input.form-control.sr-only(type="text", name="id", value=id)
+    button.mt-3.btn.btn-primary(type="submit") Save

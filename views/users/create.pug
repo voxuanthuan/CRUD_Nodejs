@@ -1,0 +1,17 @@
+extends ../layouts/common
+block content
+  h1 Create User
+  form(method="POST")
+    .group-form
+      label(for="name") Name
+      input.form-control#name(type="text", aria-describedy="namehelp", name="name")
+    .group-form
+      label(for="phone") Phone
+      input.form-control#phone(type="number", name="phone")
+    .group-form
+      label(for="email") Email
+      input.form-control#email(type="email", name="email")
+    .group-form
+      label(for="password") Password
+      input.form-control#password(type="password", name="password")
+    button.mt-3.btn.btn-primary(type="submit") Submit
